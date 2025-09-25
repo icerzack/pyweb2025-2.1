@@ -1,6 +1,6 @@
-site_name: pyweb2025-2.1-Кузнецов_Максим
-site_url: https://icerzack.github.io/pyweb2025-2.1-Кузнецов_Максим/
-repo_url: https://github.com/icerzack/pyweb2025-2.1-Кузнецов_Максим
+site_name: pyweb2025-2.1
+site_url: https://icerzack.github.io/pyweb2025-2.1/
+repo_url: https://github.com/icerzack/pyweb2025-2.1
 theme:
   name: material
   language: en

@@ -1,0 +1,17 @@
+site_name: pyweb2025-2.1-Кузнецов_Максим
+site_url: https://icerzack.github.io/pyweb2025-2.1-Кузнецов_Максим/
+repo_url: https://github.com/icerzack/pyweb2025-2.1-Кузнецов_Максим
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true

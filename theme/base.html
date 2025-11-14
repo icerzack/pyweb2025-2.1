@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      {% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="{{ config.site_description | default('-') }}"
+    />
+    <meta
+      name="author"
+      content="{{ config.site_author | default('-') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ base_url }}/assets/styles.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="{{ base_url }}/" class="site-logo">
+          {{ config.site_name }}
+        </a>
+        <nav class="site-nav">
+          {% for nav_item in nav %}
+            <a
+              href="{{ nav_item.url | url }}"
+              class="site-nav__link{% if nav_item.is_active %} site-nav__link--active{% endif %}"
+            >
+              {{ nav_item.title }}
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+        {% block content %}
+          {% if page.is_homepage %}
+            <section class="hero">
+              <div class="hero__content">
+                <h1 class="hero__title">{{ config.site_name }}</h1>
+                <p class="hero__subtitle">
+                  {{ config.site_description | default('-') }}
+                </p>
+                <a href="{{ base_url }}/deploy_report/" class="hero__cta">
+                  Отчёт по деплою
+                </a>
+              </div>
+            </section>
+          {% endif %}
+
+          <article class="page-content">
+            {{ page.content }}
+          </article>
+        {% endblock %}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__info">
+          <span>&copy; {{ config.copyright or config.site_name }} {{ build_date_utc.year }}</span>
+          {% if config.repo_url %}
+            <span class="site-footer__divider">•</span>
+            <a href="{{ config.repo_url }}" target="_blank" rel="noopener noreferrer">
+              Source on GitHub
+            </a>
+          {% endif %}
+        </div>
+        <div class="site-footer__meta">
+          <span>Built with MkDocs</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ base_url }}/assets/theme.js"></script>
+  </body>
+</html>
+
+

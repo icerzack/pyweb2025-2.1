@@ -1,0 +1,21 @@
+{
+  "name": "pyweb2025-2.1-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Custom MkDocs theme build tooling for pyweb2025-2.1",
+  "scripts": {
+    "build:css": "postcss theme/assets/styles.css -o theme/assets/styles.css",
+    "lint:html": "htmlhint \"site/**/*.html\"",
+    "minify:html": "html-minifier-terser --input-dir ./site --output-dir ./site --file-ext html --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "htmlhint": "^1.1.4",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0"
+  }
+}
+
+

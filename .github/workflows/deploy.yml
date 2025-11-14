@@ -3,6 +3,7 @@ name: Build and deploy MkDocs site
 on:
   push:
     branches:
+      - main
       - pyweb2025-2.2
   workflow_dispatch:
 
@@ -46,9 +47,10 @@ jobs:
         run: |
           npm run build:css
 
-      - name: Build MkDocs site
+      - name: Build MkDocs site (v1 + v2)
         run: |
-          mkdocs build --clean
+          mkdocs build --config-file mkdocs-v1.yml --clean
+          mkdocs build --config-file mkdocs-v2.yml
 
       - name: Validate HTML
         run: |

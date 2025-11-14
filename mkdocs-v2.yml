@@ -1,0 +1,24 @@
+site_name: pyweb2025-2.2 (Custom)
+site_url: https://icerzack.github.io/pyweb2025-2.1/v2/
+site_description: "Вариант сайта с кастомной темой."
+site_author: "Кузнецов Максим"
+repo_url: https://github.com/icerzack/pyweb2025-2.1
+
+theme:
+  name: null
+  custom_dir: theme
+
+site_dir: site/v2
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Главная: index.md
+  - Отчёт по деплою: deploy_report.md
+  - Ответы: answers.md
+
+
